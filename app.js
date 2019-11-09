@@ -30,9 +30,24 @@ re = /Hel{2,}o/i; // Must occur at least {n} amount of times
 // Parentheses () - Grouping
 re = /^([0-9]x){3}$/; // Must be a digit & 'x' three times exactly
 
+// Shorthand Character Classes
+re = /\w/; // Word character - alphanumeric or _
+re = /\w+/; // + = one or more
+re = /\W/; // Non-word character
+re = /\d/; // Match any digit
+re = /\d+/; // Match any digit 0 or more times
+re = /\D/; // Match any non-digit
+re = /\s/; // Match whitespace character
+re = /\S/; // Match non-whitespace character
+re = /Hell\b/i; // Word boundary
+
+// Assertions
+re = /x(?=y)/; // Match 'x' only if followed by 'y'
+re = /x(?!y)/; // Match 'x' only if NOT followed by 'y'
+
 
 // String to match
-const str = '3x3x3x';
+const str = 'xy';
 
 // Log results
 const result = re.exec(str);
